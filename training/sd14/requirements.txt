@@ -1,0 +1,15 @@
+# SD1.4 training and dataset preparation dependencies.
+accelerate==1.4.0
+datasets==3.2.0
+diffusers==0.18.0
+huggingface-hub==0.25.2
+numpy==1.24.2
+pandas==2.2.3
+Pillow==9.5.0
+pyarrow==18.1.0
+torch==2.0.0
+torchvision==0.15.1
+tqdm==4.67.1
+transformers==4.28.1
+packaging
+tensorboard

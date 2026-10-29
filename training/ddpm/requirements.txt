@@ -1,0 +1,9 @@
+# Minimal dependencies verified for imports and CPU loss/sampler execution.
+# Install a matching torch/torchvision build for your hardware.
+torch==2.11.0
+torchvision==0.26.0
+numpy==1.24.2
+Pillow==9.5.0
+absl-py==2.2.2
+tensorboardX==2.6.5
+tqdm==4.67.1

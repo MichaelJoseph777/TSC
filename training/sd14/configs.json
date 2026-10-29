@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "configs": {
+    "coco_overfit": {
+      "description": "coco overfit, one caption per image",
+      "imagefolders": {
+        "first": "coco_2500",
+        "second": "coco_holdout_2500"
+      },
+      "expected_images": {
+        "first": 2500,
+        "second": 2500
+      },
+      "training": {
+        "resolution": 512,
+        "train_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 1e-05,
+        "max_grad_norm": 1,
+        "lr_scheduler": "constant",
+        "lr_warmup_steps": 0,
+        "use_ema": true,
+        "max_train_steps": 150000,
+        "random_flip": false,
+        "checkpointing_steps": 1000,
+        "permanent_checkpointing_steps": 37500,
+        "checkpoints_total_limit": 2,
+        "resume_from_checkpoint": "latest"
+      }
+    },
+    "coco_real": {
+      "description": "coco real, one caption per image",
+      "imagefolders": {
+        "first": "coco_2500",
+        "second": "coco_holdout_2500"
+      },
+      "expected_images": {
+        "first": 2500,
+        "second": 2500
+      },
+      "training": {
+        "resolution": 512,
+        "train_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 1e-05,
+        "max_grad_norm": 1,
+        "lr_scheduler": "constant",
+        "lr_warmup_steps": 0,
+        "use_ema": true,
+        "max_train_steps": 50000,
+        "random_flip": true,
+        "checkpointing_steps": 1000,
+        "permanent_checkpointing_steps": 12500,
+        "checkpoints_total_limit": 2,
+        "resume_from_checkpoint": "latest"
+      }
+    },
+    "pokemon_overfit": {
+      "description": "pokemon overfit, one caption per image",
+      "imagefolders": {
+        "first": "pokemon_417",
+        "second": "pokemon_holdout_416"
+      },
+      "expected_images": {
+        "first": 417,
+        "second": 416
+      },
+      "training": {
+        "resolution": 512,
+        "train_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 1e-05,
+        "max_grad_norm": 1,
+        "lr_scheduler": "constant",
+        "lr_warmup_steps": 0,
+        "use_ema": true,
+        "max_train_steps": 7500,
+        "random_flip": false,
+        "checkpointing_steps": 1000,
+        "permanent_checkpointing_steps": 1875,
+        "checkpoints_total_limit": 2,
+        "resume_from_checkpoint": "latest"
+      }
+    },
+    "pokemon_real": {
+      "description": "pokemon real, one caption per image",
+      "imagefolders": {
+        "first": "pokemon_417",
+        "second": "pokemon_holdout_416"
+      },
+      "expected_images": {
+        "first": 417,
+        "second": 416
+      },
+      "training": {
+        "resolution": 512,
+        "train_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 1e-05,
+        "max_grad_norm": 1,
+        "lr_scheduler": "constant",
+        "lr_warmup_steps": 0,
+        "use_ema": true,
+        "max_train_steps": 7500,
+        "random_flip": true,
+        "checkpointing_steps": 1000,
+        "permanent_checkpointing_steps": 1875,
+        "checkpoints_total_limit": 2,
+        "resume_from_checkpoint": "latest"
+      }
+    },
+    "flickr_overfit": {
+      "description": "flickr overfit, one caption per image",
+      "imagefolders": {
+        "first": "flickr_2500",
+        "second": "flickr_holdout_2500"
+      },
+      "expected_images": {
+        "first": 2500,
+        "second": 2500
+      },
+      "training": {
+        "resolution": 512,
+        "train_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 1e-05,
+        "max_grad_norm": 1,
+        "lr_scheduler": "constant",
+        "lr_warmup_steps": 0,
+        "use_ema": true,
+        "max_train_steps": 150000,
+        "random_flip": false,
+        "checkpointing_steps": 1000,
+        "permanent_checkpointing_steps": 37500,
+        "checkpoints_total_limit": 2,
+        "resume_from_checkpoint": "latest"
+      }
+    },
+    "flickr_real": {
+      "description": "flickr real, one caption per image",
+      "imagefolders": {
+        "first": "flickr_10000",
+        "second": "flickr_holdout_10000"
+      },
+      "expected_images": {
+        "first": 10000,
+        "second": 10000
+      },
+      "training": {
+        "resolution": 512,
+        "train_batch_size": 1,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 1e-05,
+        "max_grad_norm": 1,
+        "lr_scheduler": "constant",
+        "lr_warmup_steps": 0,
+        "use_ema": true,
+        "max_train_steps": 200000,
+        "random_flip": true,
+        "checkpointing_steps": 1000,
+        "permanent_checkpointing_steps": 50000,
+        "checkpoints_total_limit": 2,
+        "resume_from_checkpoint": "latest"
+      }
+    }
+  }
+}

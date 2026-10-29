@@ -1,0 +1,125 @@
+{
+  "dataset": {
+    "name": "cifar100",
+    "num_classes": 100,
+    "image_channels": 3
+  },
+  "allowed_pairs": [
+    [
+      "x",
+      "x"
+    ],
+    [
+      "x",
+      "e"
+    ],
+    [
+      "x",
+      "v"
+    ],
+    [
+      "e",
+      "x"
+    ],
+    [
+      "e",
+      "e"
+    ],
+    [
+      "e",
+      "v"
+    ],
+    [
+      "v",
+      "x"
+    ],
+    [
+      "v",
+      "e"
+    ],
+    [
+      "v",
+      "v"
+    ]
+  ],
+  "training_options": {
+    "dataset_kwargs": {
+      "class_name": "training.dataset.ImageFolderDataset",
+      "path": "data/cifar100-32x32.zip",
+      "use_labels": false,
+      "xflip": false,
+      "cache": true,
+      "class_subset": "first-half-per-class",
+      "resolution": 32,
+      "max_size": 25000
+    },
+    "data_loader_kwargs": {
+      "pin_memory": true,
+      "num_workers": 8,
+      "prefetch_factor": 2
+    },
+    "network_kwargs": {
+      "model_type": "SongUNet",
+      "embedding_type": "positional",
+      "encoder_type": "standard",
+      "decoder_type": "standard",
+      "channel_mult_noise": 1,
+      "resample_filter": [
+        1,
+        1
+      ],
+      "model_channels": 128,
+      "channel_mult": [
+        2,
+        2,
+        2
+      ],
+      "class_name": "training.networks.FMPrecond",
+      "augment_dim": 9,
+      "dropout": 0.13,
+      "use_fp16": false,
+      "label_dropout": 0.0
+    },
+    "loss_kwargs": {
+      "class_name": "training.loss.FMLoss",
+      "prediction": "e",
+      "loss_target": "e",
+      "t_eps": 0.05
+    },
+    "optimizer_kwargs": {
+      "class_name": "torch.optim.Adam",
+      "lr": 0.0002,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08
+    },
+    "augment_kwargs": {
+      "class_name": "training.augment.AugmentPipe",
+      "p": 0.12,
+      "xflip": 100000000.0,
+      "yflip": 1,
+      "scale": 1,
+      "rotate_frac": 1,
+      "aniso": 1,
+      "translate_frac": 1
+    },
+    "total_kimg": 100000,
+    "ema_halflife_kimg": 500,
+    "batch_size": 128,
+    "batch_gpu": null,
+    "loss_scaling": 1.0,
+    "cudnn_benchmark": false,
+    "lr_rampup_kimg": 10000.0,
+    "kimg_per_tick": 10,
+    "snapshot_ticks": null,
+    "state_dump_ticks": null,
+    "weight_snapshot_epochs": 500,
+    "checkpoint_last_epochs": 10,
+    "seed": 0,
+    "validation_kwargs": null,
+    "wandb_kwargs": null,
+    "ema_rampup_ratio": 0.05
+  }
+}

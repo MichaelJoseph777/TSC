@@ -1,0 +1,41 @@
+# Python and environments.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Local data, training artifacts, and experiment tracking.
+/data/
+/datasets/
+/outputs/
+/artifacts/
+/runs/
+/checkpoints/
+/logs/
+**/training-runs/
+**/wandb/
+**/tensorboard/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.pkl
+*.zip
+*.tar
+*.tar.gz
+*.tfevents.*
+events.out.tfevents.*
+slurm-*.out
+slurm-*.err
+
+# Local credentials and editor settings.
+.env
+.env.*
+!.env.example
+.aws/
+.vscode/
+.idea/
+.DS_Store

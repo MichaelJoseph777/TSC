@@ -1,0 +1,42 @@
+{
+  "flags": {
+    "train": true,
+    "dataset": "TINY-IN",
+    "hflip": "true",
+    "conditional": false,
+    "num_classes": 0,
+    "mean_type": "epsilon",
+    "var_type": "fixedlarge",
+    "T": 1000,
+    "beta_schedule": "linear",
+    "beta_1": 0.0001,
+    "beta_T": 0.02,
+    "img_size": 32,
+    "ch": 128,
+    "ch_mult": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "attn": [
+      1
+    ],
+    "num_res_blocks": 2,
+    "dropout": 0.1,
+    "lr": 0.0002,
+    "warmup": 5000,
+    "batch_size": 128,
+    "grad_clip": 1.0,
+    "ema_decay": 0.9999,
+    "total_steps": 1600000,
+    "num_workers": 16,
+    "parallel": false,
+    "resume": true,
+    "sample_size": 64,
+    "sample_step": 100000,
+    "save_step": 10000,
+    "archive_step": 195000,
+    "eval_step": 0
+  }
+}
